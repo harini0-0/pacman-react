@@ -72,9 +72,8 @@ export default class Pacman extends Component {
         const monsters = this.state.monsters.map(({ id, ...monster }) => (
             <Monster key={id} {...props} {...monster} />
         ));
-
         return (
-            <div className="pacman">
+            <div className="pacman" >
                 <Board {...props} />
                 <Scores score={this.state.score} lost={this.state.lost} />
                 <AllFood {...props} food={this.state.food} />

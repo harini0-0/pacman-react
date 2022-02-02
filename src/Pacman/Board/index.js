@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { BOARD_WIDTH, BOARD_HEIGHT } from '../constants';
 import Walls from './Walls';
 import './style.scss';
+// import '../mapbg.png'
 
 export default function Board(props) {
     const { gridSize } = props;
@@ -12,8 +13,10 @@ export default function Board(props) {
 
     return (
         <div className="pacman-board">
-            <svg width={boardWidth} height={boardHeight}>
-                <rect x={0} y={0} width={boardWidth} height={boardHeight} fill="#000" />
+            {/* <img src='./mapbg.png' width={20} height={30}></img> */}
+            <svg width={boardWidth*3} height={boardHeight}>
+                
+                <rect x={0} y={0} width={boardWidth*10} height={boardHeight*10} fill="#000" />
                 <Walls {...props} />
             </svg>
         </div>

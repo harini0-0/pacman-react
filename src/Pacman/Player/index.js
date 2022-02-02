@@ -100,9 +100,9 @@ export default class Player extends Component {
         const radius = gridSize * PLAYER_RADIUS;
 
         const style = {
-            ...cssPosition(position, gridSize),
+            ...cssPosition(position, gridSize - 1.4),
             width: radius * 2,
-            height: radius * 2,
+            height: radius * 3,
             marginLeft: -radius,
             marginTop: -radius
         };

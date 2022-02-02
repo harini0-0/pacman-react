@@ -7,7 +7,7 @@ import './style.scss';
 export default function Food({ gridSize, position, eaten, big }) {
     const className = classNames('food', { eaten, big });
 
-    const style = cssPosition(position, gridSize);
+    const style = cssPosition(position, gridSize - 1.4);
 
     return (
         <span className={className} style={style} />

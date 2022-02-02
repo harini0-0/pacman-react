@@ -69,8 +69,8 @@ function WaveMouth({ gridSize, eating }) {
         return null;
     }
 
-    const waveRadius = gridSize * 0.125;
-    const yPos = gridSize * 0.95;
+    const waveRadius = (gridSize - 1.4) * 0.125;
+    const yPos = (gridSize - 1.4) * 0.95;
 
     const mouthPath = [
         `M${waveRadius * 2},${yPos}`,
@@ -108,7 +108,7 @@ function getColor(eating, eatingFlash, color) {
 }
 
 function MonsterIcon({ gridSize, eating, eatingFlash, position, direction, color }) {
-    const radius = gridSize * 0.75;
+    const radius = (gridSize - 1.4) * 0.75;
     const monsterPath = getMonsterPath(radius);
     const pathProps = {
         stroke: 'none',
@@ -116,7 +116,7 @@ function MonsterIcon({ gridSize, eating, eatingFlash, position, direction, color
     };
 
     const style = {
-        ...cssPosition(position, gridSize),
+        ...cssPosition(position, gridSize - 1.4),
         width: radius * 2,
         height: radius * 2,
         marginLeft: -radius,
@@ -126,7 +126,7 @@ function MonsterIcon({ gridSize, eating, eatingFlash, position, direction, color
     return (
         <svg className="pacman-monster" style={style}>
             <path d={monsterPath} {...pathProps} />
-            <WaveMouth gridSize={gridSize} eating={eating} />
+            <WaveMouth gridSize={gridSize - 1.4} eating={eating} />
             <MonsterEye radius={radius} direction={direction} offset={-1} />
             <MonsterEye radius={radius} direction={direction} offset={1} />
         </svg>
